@@ -6,7 +6,8 @@ import { IconButton } from "./button";
 import SettingsIcon from "../icons/settings.svg";
 import GithubIcon from "../icons/github.svg";
 // import ChatGptIcon from "../icons/chatgpt.svg";
-import ChatGptIcon from "../icons/xiebiaobiao.svg";
+// import ChatGptIcon from "../icons/xiebiaobiao.svg";
+import ChatGptIcon from "../icons/baizhang.png";
 import AddIcon from "../icons/add.svg";
 import CloseIcon from "../icons/close.svg";
 import DeleteIcon from "../icons/delete.svg";
@@ -31,6 +32,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { isIOS, useMobileScreen } from "../utils";
 import dynamic from "next/dynamic";
 import { showConfirm, showToast } from "./ui-lib";
+import NextImage from "next/image";
 
 const ChatList = dynamic(async () => (await import("./chat-list")).ChatList, {
   loading: () => null,
@@ -156,11 +158,12 @@ export function SideBar(props: { className?: string }) {
     >
       <div className={styles["sidebar-header"]} data-tauri-drag-region>
         <div className={styles["sidebar-title"]} data-tauri-drag-region>
-          写标标
+          百章科技
         </div>
-        <div className={styles["sidebar-sub-title"]}>专注软件系统技术方案</div>
+        <div className={styles["sidebar-sub-title"]}>BAIZHANG TECHNOLOGY</div>
         <div className={styles["sidebar-logo"] + " no-dark"}>
-          <ChatGptIcon />
+          {/*<ChatGptIcon />*/}
+          <NextImage src={ChatGptIcon.src} alt="logo" width={80} height={20} />
         </div>
       </div>
 
